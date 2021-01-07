@@ -1,6 +1,8 @@
-{
-  "expo": {
-    "name": "react-native-exercise",
+import 'dotenv/config';
+
+export default
+  {
+    name: "react-native-exercise",
     "slug": "react-native-exercise",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,6 +23,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
-  }
-}
+    },
+    extra: {
+      env: process.env.ENV,
+      APOLLO_URI : process.env.APOLLO_URI
+    },
+  };
+
+

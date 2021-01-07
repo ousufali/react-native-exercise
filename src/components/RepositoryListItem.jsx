@@ -39,9 +39,6 @@ const styles = StyleSheet.create({
 
 
 const RepositoryListItem = ({ repository }) => {
-    if (!repository) {
-        return (<></>);
-    }
     return (
         <View style={styles.flexContainer} >
             <CardBody name={repository.fullName} language={repository.language} description={repository.description} imageUri={repository.ownerAvatarUrl} />

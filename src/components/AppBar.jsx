@@ -1,12 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 import theme from '../theme';
 import AppBarRepositoryTab from './AppBarRepositoryTab';
 import AppBarSignInTab from './AppBarSignInTab';
+import useAuthorized from '../hooks/useAuthorized';
+import AppBarLogoutTab from './AppBarLogoutTab';
 
 import { Link } from 'react-router-native';
-
 
 
 
@@ -31,6 +32,20 @@ const styles = StyleSheet.create({
 
 
 const AppBar = () => {
+    const isUserAuthorized = useAuthorized();
+
+    console.log("isUserAuthorized:  ", isUserAuthorized);
+    if (isUserAuthorized) {
+        return (
+            <View style={styles.container}>
+                <ScrollView horizontal style={styles.scrollContainer}>
+                    <Link to='/' component={AppBarRepositoryTab} />
+                    <Link to='/signin' component={AppBarSignInTab} />
+                    <AppBarLogoutTab />
+                </ScrollView>
+            </View >
+        );
+    }
 
     return (
         <View style={styles.container}>
