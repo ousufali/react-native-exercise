@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
-import FormikTextInput from './FormikTextInput';
-import theme from '../theme';
-import Text from './Text';
+import FormikTextInput from '../FormikTextInput';
+import theme from '../../theme';
+import Text from '../Text';
 
 const styles = {
     buttonStyle: {
@@ -33,14 +33,16 @@ const styles = {
 
 
 
-const SignIn = ({ onSubmit }) => {
+const SignUpForm = ({ onSubmit }) => {
     return (
         <View style={styles.viewStyle}>
-            <FormikTextInput name="username" placeholder="Username" style={styles.inputStyle} />
-            <FormikTextInput name="password" placeholder="Password" secureTextEntry style={styles.inputStyle} />
+            <FormikTextInput name="username" placeholder="Username" style={styles.inputStyle}      testID="usernametestid" />
+            <FormikTextInput name="password" placeholder="Password" secureTextEntry style={styles.inputStyle}    testID="passwordtestid"/>
+            <FormikTextInput name="confirmPassword" placeholder="confirm Password" secureTextEntry style={styles.inputStyle}    testID="confirmPasswordtestid"/>
             <TouchableOpacity activeOpacity={0.8} onPress={onSubmit}>
                 <View style={styles.buttonStyle}>
-                    <Text style={styles.buttonTextStyle} fontWeight="bold">submit</Text>
+                    <Text testID={"SUBMITBUTTON"} style={styles.buttonTextStyle} fontWeight="bold">Sign Up</Text>
+
                 </View>
             </TouchableOpacity>
 
@@ -48,4 +50,4 @@ const SignIn = ({ onSubmit }) => {
     );
 };
 
-export default SignIn;
+export default SignUpForm;

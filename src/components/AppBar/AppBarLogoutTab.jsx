@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import Text from './Text';
+import Text from '../Text';
 import { useApolloClient } from '@apollo/react-hooks';
-import AuthStorageContext from '../contexts/AuthStorageContext';
+import AuthStorageContext from '../../contexts/AuthStorageContext';
 
 
 
@@ -30,15 +30,16 @@ const AppBarRepositoryTab = () => {
 
 
     return (
-        <View style={styles.container}>
+        <TouchableOpacity onPress={() => handleLogout()} activeOpacity={0.8}>
+            <View style={styles.container}>
 
-            <TouchableOpacity onPress={() => handleLogout()} activeOpacity={0.8}>
                 <Text fontSize="subheading" fontWeight="bold" color="primary" >
                     Sign Out
                  </Text>
 
-            </TouchableOpacity>
-        </View >
+            </View >
+        </TouchableOpacity>
+
 
     );
 };

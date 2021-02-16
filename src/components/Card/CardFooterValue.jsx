@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, } from 'react-native';
-import Text from '../components/Text';
+import Text from '../Text';
 
 
 const styles = StyleSheet.create({
@@ -21,10 +21,10 @@ const calculateValue = (value) => {
 };
 
 
-const CardFooterValue = ({ value, label }) => {
+const CardFooterValue = ({ value, label ,testid }) => {
     return (
-        <View style={styles.container}>
-            <Text fontWeight="bold"  >{calculateValue(value)} </Text>
+        <View style={styles.container} >
+            <Text  fontWeight="bold" testID={testid} >{calculateValue(value)} </Text>
             <Text style={styles.labels} fontSize="textSecondary" > {label}</Text>
         </View>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity} from 'react-native';
-import Text from './Text';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import Text from '.././Text';
 import { useHistory } from 'react-router-native';
 
 
@@ -15,17 +15,17 @@ const styles = StyleSheet.create({
 
 });
 
-const AppBarRepositoryTab = () => {
+const AppBarSignInTab = () => {
     const history = useHistory();
     return (
         <View style={styles.container}>
             {/* <TouchableWithoutFeedback onPress={() => history.push('/signin')}> */}
-                <TouchableOpacity onPress={() => history.push('/signin')} activeOpacity={0.8}>
-                    <Text fontSize="subheading" fontWeight="bold" color="primary" >
-                        SignIn
+            <TouchableOpacity onPress={() => history.push('/signin')} activeOpacity={0.8}>
+                <Text fontSize="subheading" fontWeight="bold" color="primary" >
+                    SignIn
                  </Text>
 
-                </TouchableOpacity>
+            </TouchableOpacity>
             {/* </TouchableWithoutFeedback> */}
         </View >
 
@@ -33,4 +33,4 @@ const AppBarRepositoryTab = () => {
 };
 
 
-export default AppBarRepositoryTab;
+export default AppBarSignInTab;

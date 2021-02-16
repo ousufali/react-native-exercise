@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
-import theme from '../theme';
+import theme from '../../theme';
 import AppBarRepositoryTab from './AppBarRepositoryTab';
 import AppBarSignInTab from './AppBarSignInTab';
-import useAuthorized from '../hooks/useAuthorized';
+import useAuthorized from '../../hooks/useAuthorized';
 import AppBarLogoutTab from './AppBarLogoutTab';
+import AppBarReviewFormTab from './AppBarReviewFormTab';
+import AppBarSignUpTab from './AppBarSignUpTab';
 
 import { Link } from 'react-router-native';
 
@@ -40,7 +42,7 @@ const AppBar = () => {
             <View style={styles.container}>
                 <ScrollView horizontal style={styles.scrollContainer}>
                     <Link to='/' component={AppBarRepositoryTab} />
-                    <Link to='/signin' component={AppBarSignInTab} />
+                    <Link to='/review' component={AppBarReviewFormTab} />
                     <AppBarLogoutTab />
                 </ScrollView>
             </View >
@@ -52,6 +54,7 @@ const AppBar = () => {
             <ScrollView horizontal style={styles.scrollContainer}>
                 <Link to='/' component={AppBarRepositoryTab} />
                 <Link to='/signin' component={AppBarSignInTab} />
+                <Link to='/signup' component={AppBarSignUpTab} />
             </ScrollView>
         </View >
     );

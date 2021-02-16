@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import Text from './Text';
+import Text from '.././Text';
 import { useHistory } from 'react-router-native';
 
 

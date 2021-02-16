@@ -14,7 +14,8 @@ const useAuthorized = () => {
     if (queryResult.loading) {
         return false;
     }
-    if (queryResult.data.authorizedUser === null) {
+    console.log("authQuery: ", queryResult);
+    if (queryResult && queryResult.data.authorizedUser === null) {
         return false;
     }
     return true;

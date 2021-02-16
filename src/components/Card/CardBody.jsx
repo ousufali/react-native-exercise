@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
-import Text from './Text';
+import Text from '../Text';
 
 
 const styles = StyleSheet.create({
@@ -43,13 +43,13 @@ const CardBody = ({ imageUri, description, language, name }) => {
                 <Image style={styles.imageStyle} source={{ uri: imageUri }} />
 
                 <View style={styles.cardBody}>
-                    <Text fontWeight="bold" fontSize="subHeading">{name}</Text>
-                    <Text color="textSecondary" >{description}</Text>
+                    <Text testID={"nametestid"} fontWeight="bold" fontSize="subHeading">{name}</Text>
+                    <Text testID={"descriptiontestid"} color="textSecondary" >{description}</Text>
                 </View>
 
             </View>
             <View style={styles.languageStyle} >
-                <Text style={{ color: 'white' }}>{language}</Text>
+                <Text testID={"languagetestid"} style={{ color: 'white' }}>{language}</Text>
             </View>
         </View >
     );
